@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <title>Felipe Farias's personal Web Page</title>
+  </head>
+
+  <body>
+    <div id="header">
+      <a id="headerLink" href="https://felipefarias.xyz/">felipefarias.xyz</a>
+      <span class="hidden"> - </span>
+      <span id="headerSubtitle">Arch Linux UEFI Install</span>
+    </div>
+
+    <!--Content-->
+    <div id="content">
+      <!--Main Content-->
+      <div id="main">
+        <a href="https://felipefarias.xyz/guides/guides.html">Go Back...</a>
+        <p>
+          Should be connected to the internet via cable, for wifi refer to the
+          arch wiki.
+        </p>
+        <h2>Sync time protocol</h2>
+        <code>$ timedatectl set-ntp true</code>
+        <h2>Partitions Get disks</h2>
+        <code>$ lsblk</code>
+        <h2>Enter your hardware storage</h2>
+        <code>$ fdisk /dev/sdx</code>
+        <h2>Partition the disks as you like.</h2>
+        <p>For this tutorial i will be doing 2 partitions</p>
+        <p>
+          UEFI partition -&gt; 200MB -&gt; EFI System (press t and then 1 for
+          EFI) Full storage -&gt; Remaining size.
+        </p>
+        <h2>Format partitions EFI Partition</h2>
+        <code>
+          $ mkfs.fat -F32 /dev/sdx <br />
+          $ mkfs.ext4 /dev/sdx
+        </code>
+        <h2>Mount of partitions</h2>
+        <p>Storage partition</p>
+        <code>$ mount /dev/sdx /mnt</code>
+        <p>EFI partition</p>
+        <code>
+          $ mkdir /mnt/boot/ <br />
+          $ mount /dev/sdx /mnt/boot
+        </code>
+        <h2>Installing base system</h2>
+        <code
+          >$ pacstrap /mnt base base-devel linux-lts linux-firmware vim
+          git</code
+        >
+        <p>For WiFi Internet add: <code>dhpcd iwd</code></p>
+        <p>For Wired Internet add: <code>networkmanager</code></p>
+        <h2>Generate FSTAB</h2>
+        <code>$ genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</code>
+        <h2>Change installation medium</h2>
+        <code>$ arch-chroot /mnt</code>
+        <h2>Create SWAP file.</h2>
+        <code>
+          $ fallocate -l 2GB /swapfile <br />
+          $ chmod 600 /swapfile <br />
+          $ mkswap /swapfile <br />
+          $ swapon /swapfile
+        </code>
+        <h2>Change FSTAB for SWAP file</h2>
+        <code>$ vim /etc/fstab</code>
+        <h3>Inside the FSTAB file add the following:</h3>
+        <p><code>/swapfile none swap defaults 0 0</code></p>
+        <h2>Timezone</h2>
+        <code>
+          $ ln -sf /usr/share/zoneinfo/Chile/Continental /etc/localtime <br />
+          $ hwclock --systohc
+        </code>
+        <h2>Change locale.gen</h2>
+        <p>
+          Edit the /etc/locale.gen file and uncomment your language, in my case
+          is
+          <code>en_US-UTF-8 UTF-8</code>
+        </p>
+        <p>Enter the following command:</p>
+        <code>$ locale-gen</code>
+        <h2>Edit locale.conf</h2>
+        <code>$ vim /etc/locale.conf</code>
+        <h2>Add hostname</h2>
+        <code>$ vim /etc/hostname</code>
+        <p>Set your prefered name my case is t4rkf</p>
+        <h2>Add hosts</h2>
+        <p>Edit /etc/hosts:</p>
+        <code>
+          127.0.0.1 &nbsp; localhost <br />
+          ::1 &nbsp; localhost <br />
+          127.0.1.1 &nbsp; userName.localdomain &nbsp; userName
+        </code>
+        <h2>Add a password to your root</h2>
+        <code>$ passwd</code>
+        <h2>Set the bootloader</h2>
+        <p>Download following software</p>
+        <code> $ pacman -S grub efibootmgr </code>
+        <h2>GRUB install</h2>
+        <code>
+          $ grub-install --target=x86_64-efi --efi-directory=/boot
+          --bootloader-id=GRUB
+          <br />
+          $ grub-mkconfig -o /boot/grub/grub.cfg
+        </code>
+
+        <h2>Add new user</h2>
+        <code>
+          $ useradd -mG wheel newUser <br />
+          $ passwd newUser
+        </code>
+
+        <h2>Edit group 'wheel' permisions</h2>
+        <code> $ visudo </code>
+
+        <h3>Reboot system</h3>
+      </div>
+    </div>
+  </body>
+</html>

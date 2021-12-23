@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <title>Felipe Farias's personal Web Page</title>
+  </head>
+
+  <body>
+    <div id="header">
+      <a id="headerLink" href="https://felipefarias.xyz/">felipefarias.xyz</a>
+      <span class="hidden"> - </span>
+      <span id="headerSubtitle">Post installation with minimum bloat</span>
+    </div>
+
+    <!--Content-->
+    <div id="content">
+      <!--Main Content-->
+      <div id="main">
+        <!--Insert Content Here-->
+        <a href="https://felipefarias.xyz/guides/guides.html">Go Back...</a>
+        <h2>Window display with X.org</h2>
+        <p>Install the following packages</p>
+        <code>
+          xorg-server<br />
+          xorg-xinit<br />
+          libxinerama<br />
+          libxft
+        </code>
+        <h3>DWM, ST, DMenu</h3>
+        <code>
+          $ git clone https://git.suckless.org/dwm<br />
+          $ git clone https://git.suckless.org/st<br />
+          $ git clone https://git.suckless.org/dmenu<br />
+          $ git clone https://git.suckless.org/tabbed
+        </code>
+
+        <p>
+          Install each cloned repo with <code>$ sudo make clean install</code>
+        </p>
+
+        <p>Create a xinitrc file in $HOME<code>$ touch .xinitrc</code></p>
+
+        <p>Edit the file with</p>
+        <code> exec dwm </code>
+
+        <h2>Extras (wallpaper & X.org utilities)</h2>
+        <code>
+          xorg-xset<br />
+          xorg-xsetroot<br />
+          xwallpaper
+        </code>
+
+        <h2>Now you should be able to start with <code>$ startx</code></h2>
+
+        <h2>Audio and Bluetooth</h2>
+        <h3>Audio</h3>
+        <code> $ sudo pacman -S pulseaudio pulsemixer </code>
+
+        <h3>Bluetooth</h3>
+        <code> $ sudo pacman -S bluez bluez-utils pulseaudio-bluetooth </code>
+
+        <h3>Start / Enable services:</h3>
+        <code>
+          sudo systemctl start bluetooth.service <br />
+          sudo systemctl enable bluetooth.service
+        </code>
+
+        <h2>Surf BROWSER</h2>
+        <p>Install the following packages</p>
+        <code>
+          webkit2gtk<br />
+          gcr<br />
+          gstreamer<br />
+          gst-plugins-good<br />
+          gst-libav<br />
+          gst-plugins-base<br />
+          xdg-utils
+        </code>
+        <h3>Download software</h3>
+        <code> $ git clone https://git.suckless.org/surf<br /> </code>
+
+        <p>Install with <code>$ sudo make clean install</code></p>
+      </div>
+    </div>
+  </body>
+</html>
