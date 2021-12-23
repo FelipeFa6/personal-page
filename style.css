@@ -17,6 +17,13 @@ body {
 pre,
 code {
   margin: 0;
+  padding: 10px;
+  display: block;
+}
+
+code {
+  background-color: #282828;
+  color: #fff;
 }
 
 a {

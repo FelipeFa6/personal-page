@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <title>Felipe Farias's personal Web Page</title>
+  </head>
+
+  <body>
+    <div id="header">
+      <a id="headerLink" href="https://felipefarias.xyz/">felipefarias.xyz</a>
+      <span class="hidden"> - </span>
+      <span id="headerSubtitle">Suckless Software</span>
+    </div>
+
+    <!--Content-->
+    <div id="content">
+      <!--Main Content-->
+      <div id="main">
+        <a href="guides.html">Go Back...</a>
+        <!--Insert content Here-->
+        <h1>dwm & dmenu</h1>
+        <p>Install the following dependencies</p>
+        <code>
+          $ pacman -S xorg-server xorg-xini libxinerama libxft webkit2gtk
+        </code>
+
+        <p>Clone dwm & dmenu</p>
+        <code>
+          $ git clone https://git.suckless.org/dwm<br />
+          $ git clone https://git.suckless.org/dmenu<br />
+        </code>
+
+        <p>Compile the cloned repos with</p>
+        <code>$ sudo make clean install</code>
+
+        <p>Create a X config file</p>
+        <code>$ echo "exec dwm" > ~/.xinitrc</code>
+
+        <h1>Wallpaper</h1>
+        <h3>Static Wallpaper (xsetroot)</h3>
+        <p>
+          For minimalism elitists there is a perfect option for a wallpaper with
+          <b> solid colors</b>
+        </p>
+        <p>Install the xsetroot utility</p>
+        <code>$ pacman -S xorg-xsetroot </code>
+
+        <p>And run the following command</p>
+        <code>$ xsetroot -solid COLOR </code>
+
+        <h3>Image Wallpaper (feh)</h3>
+        <p>
+          I use feh because is a image viewer that has the hability to set a
+          wallpaper <br />(2 in 1 = less bloat).
+        </p>
+        <code>
+          $ pacman -S feh
+          <br />
+          <br />
+          # Set a random image in a folder
+          <br />
+          $ feh --bg-scale --randomize ~/dir/to/wallpaper/* --no-fehbg
+          <br />
+          <br />
+          # Set a single image
+          <br />
+          $ feh --bg-scale ~/dir/to/wallpaper
+        </code>
+      </div>
+    </div>
+  </body>
+</html>

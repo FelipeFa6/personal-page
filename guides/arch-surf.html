@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <title>Felipe Farias's personal Web Page</title>
+  </head>
+
+  <body>
+    <div id="header">
+      <a id="headerLink" href="https://felipefarias.xyz/">felipefarias.xyz</a>
+      <span class="hidden"> - </span>
+      <span id="headerSubtitle">Suckless Software</span>
+    </div>
+
+    <!--Content-->
+    <div id="content">
+      <!--Main Content-->
+      <div id="main">
+        <a href="guides.html">Go Back...</a>
+        <!--Insert content Here-->
+        <h1>Surf BROWSER</h1>
+
+        <p>Clone Surf:</p>
+
+        <p><code>$ git clone https://git.suckless.org/surf </code></p>
+
+        <p>Install the following dependencies.</p>
+
+        <p><code>$ pacman -S webkit2gtk gcr </code></p>
+
+        <p>Compile Surf with</p>
+
+        <p><code>$ sudo make clean install </code></p>
+
+        <h3>Extra packages for surf</h3>
+
+        <p>By default surf cant play youtube videos.</p>
+
+        <p>Your system will need the following packaged for it to work.</p>
+
+        <p>
+          <code>
+            pacman -S gstreamer gst-plugins-good gst-libav gst-plugins-base
+            xdg-utils
+          </code>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
