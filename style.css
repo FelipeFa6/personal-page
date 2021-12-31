@@ -152,3 +152,12 @@ h4 {
 .hidden {
   display: none;
 }
+
+/*icon */
+a img {
+	max-height: 1em;
+	max-width: 1em;
+	vertical-align: middle ;
+}
+
+
