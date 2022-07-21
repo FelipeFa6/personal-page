@@ -9,7 +9,7 @@
 &lt;p>By default surf cant play youtube videos.
 Your system will need the following packaged for it to work.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>$ pacman -S gstreamer gst-plugins-good gst-libav gst-plugins-base xdg-utils
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Arch DWM DMENU</title><link>https://felipefarias.xyz/guides/arch-dwm-dmenu/</link><pubDate>Wed, 20 Jul 2022 23:50:53 -0400</pubDate><guid>https://felipefarias.xyz/guides/arch-dwm-dmenu/</guid><description>&lt;p>&lt;a href="https://felipefarias.xyz/guides">Go Back&amp;hellip;&lt;/a>&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Arch Dwm Dmenu</title><link>https://felipefarias.xyz/guides/arch-dwm-dmenu/</link><pubDate>Wed, 20 Jul 2022 23:50:53 -0400</pubDate><guid>https://felipefarias.xyz/guides/arch-dwm-dmenu/</guid><description>&lt;p>&lt;a href="https://felipefarias.xyz/guides">Go Back&amp;hellip;&lt;/a>&lt;/p>
 &lt;h1 id="dwm--dmenu">dwm &amp;amp; dmenu&lt;/h1>
 &lt;p>Install the following dependencies&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>$ pacman -S xorg-server xorg-xini libxinerama libxft webkit2gtk
