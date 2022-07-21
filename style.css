@@ -5,6 +5,10 @@ body {
   margin: 0;
 }
 
+main{
+  padding: 15px;
+}
+
 a {
   text-decoration: none;
 }
@@ -69,13 +73,12 @@ footer {
   color: #fbf1c7;
 }
 
-
 #header {
   background-color: #282828;
   clear: both;
   color: #928374;
-  font-size: 1.78em;
-  padding: 0.7ex 0.7ex 0.7ex 0.7em;
+  font-size: 1.3em;
+  padding: 0.7ex;
 }
 
 #headerLink {
